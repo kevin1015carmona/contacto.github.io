@@ -42,13 +42,11 @@ header {
 }
 
 #first_header {
-  display: grid;
-  grid-template-columns: repeat(20, 5%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: #607f9b;
-  grid-column: 1/20;
-  grid-row: 1/2;
   border-bottom: 4px solid rgba(62, 0, 119, 0.808);
-  padding-top: 2%;
   width: 100vw;
   .header,
   .header_perfil {
@@ -57,76 +55,23 @@ header {
   }
 
   .header_perfil {
-    grid-column: 2/7;
-  }
-  .inicio {
-    grid-column: 9/11;
-    grid-row: 1/2;
+    margin-left: 2%;
   }
   .blog {
-    grid-column: 12/14;
+    margin-left: 15%;
     a {
       @include none_a(white);
     }
   }
-  .portafolio {
-    grid-column: 14/17;
-  }
-  .contacto {
-    grid-column: 18/20;
-    grid-row: 1/2;
-  }
+
   /*MENU DONDE ESTAN LOS HEADERS, SE PONE ANIMACION Y SE OCULTA
   PARA DESPUES EN RESPONSIVE MOSTRARLO Y OCULTAR LOS HEADER*/
-  #menu_desplegable {
-    color: white;
-    grid-column: 17/20;
-    grid-row: 1/2;
-
-    form {
-      width: 45%;
-      height: 100%;
-      margin-top: -7%;
-
-      button {
-        background-color: #234b6e;
-        width: 100%;
-        height: 100%;
-      }
-    }
-    .menu_des_design {
-      width: 75%;
-      height: 23%;
-      background-color: #bdbbbb;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 5%;
-      border-radius: 20%;
-    }
-  }
-}
-
-#menu_des {
-  visibility: hidden;
-  grid-column: 5/6;
-  grid-row: 1/3;
-  #box_dashed {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.menu_header {
-  background-color: #234b6e;
-}
-
-ul {
-  list-style: none;
-  @include fonttitles(10px);
-  color: white;
-  text-align: center;
-  li {
-    margin-top: 2%;
+  button {
+    display: none;
+    margin-right: 3%;
+    height: 70%;
+    width: 7%;
+    background-color: red;
   }
 }
 
@@ -404,8 +349,8 @@ footer {
 /*----------RESPONSIVE--------------------*/
 
 @media (min-width: 1011px) {
-  #menu_desplegable {
-    visibility: hidden;
+  .header {
+    visibility: visible;
   }
 }
 
@@ -419,27 +364,11 @@ footer {
     padding-left: 17%;
   }
   .header {
-    visibility: hidden;
+    visibility: visible;
   }
 }
 
 @media (min-width: 690px) and (max-width: 782px) {
-  #first_header {
-    .header_perfil {
-      grid-column: 2/10;
-      grid-row: 1/2;
-    }
-    #menu_desplegable {
-      grid-column: 19/21;
-      grid-row: 1/3;
-      padding-right: 0%;
-      form {
-        width: 75%;
-        height: 80%;
-      }
-    }
-  }
-
   main {
     grid-template-columns: 56% 44%;
   }
@@ -449,7 +378,7 @@ footer {
   }
 
   .header {
-    visibility: hidden;
+    visibility: visible;
   }
 
   .tec_tittle,
@@ -459,41 +388,17 @@ footer {
   }
 }
 
-@media (min-width: 479px) and (max-width: 689px) {
+@media (min-width: 479px) and (max-width: 700px) {
   header {
     grid-template-rows: 20% 80%;
   }
 
-  #first_header {
-    grid-template-columns: repeat(5, 20%);
-    .header_perfil {
-      grid-column: 1/3;
-    }
-    #menu_desplegable {
-      grid-column: 5/6;
-      grid-row: 1/3;
-    }
-  }
-  #menu_des {
-    grid-column: 1/6;
-    position: relative;
-    width: 100vw;
-  }
   .header {
     visibility: hidden;
   }
   /*--------------SECOND HEADER--------------*/
   body {
     grid-template-rows: 24% 25% 41% 10%;
-  }
-  ul {
-    list-style: none;
-    @include fonttitles(10px);
-    color: white;
-    text-align: center;
-    li {
-      margin-top: 1%;
-    }
   }
 
   #second_header {
