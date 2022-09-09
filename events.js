@@ -1,86 +1,51 @@
 "use strict";
 window.addEventListener("load", function () {
-  var box_dashed = document.querySelector("#box_dashed");
-  var formulario = document.getElementById("formulario");
+  const boton = document.querySelector("#menu_button");
+  const menu = document.querySelector("#menu");
+  const menu1 = document.querySelector(".menu1");
+  const menu2 = document.querySelector(".menu2");
+  const menu3 = document.querySelector(".menu3");
+  var comprobar_menu = false;
 
-  box_dashed.style.display = "none";
-  formulario.addEventListener("click", function () {
-    if (window.matchMedia("(min-width:870px)").matches) {
-      if (box_dashed.style.display == "none") {
-        box_dashed.style.display = "block";
-        return;
-      } else {
-        box_dashed.style.display = "none";
-      }
+  boton.addEventListener("click", function () {
+    if (comprobar_menu == false) {
+      menu.style.animation = "menu_expand .7s forwards";
+      menu1.style.animation = "nav_menu1 .7s forwards";
+      menu2.style.animation = "nav_menu2 .7s forwards";
+      menu3.style.animation = "nav_menu3 .7s forwards";
+
+      comprobar_menu = true;
+    } else {
+      menu.style.animation = "menu_contract .7s forwards";
+      menu1.style.animation = "nav_menu1_return .7s forwards";
+      menu2.style.animation = "nav_menu2_return .7s forwards";
+      menu3.style.animation = "nav_menu3_return .7s  forwards";
+      comprobar_menu = false;
     }
   });
 
-  var q = document.querySelector("#Q");
-  var a = document.querySelector("#A");
-  var container = document.querySelector("#container");
-  var espacio = document.querySelector("#espacio_en_blanco");
-
-  formulario.addEventListener("click", function () {
-    if (
-      window.matchMedia("(min-width:100px)").matches &&
-      window.matchMedia("(max-width:869px)").matches
-    ) {
-      if (box_dashed.style.display == "none") {
-        box_dashed.style.display = "block";
-        container.append(q);
-        container.appendChild(a);
-        return;
-      } else {
-        box_dashed.style.display = "none";
-        espacio.append(q);
-        espacio.appendChild(a);
-      }
-    }
-  });
-});
-
-var animado_1 = document.getElementsByClassName("animacion_1");
-var animado_2 = document.getElementsByClassName("animacion_2");
-var animado_3 = document.getElementsByClassName("animacion_3");
-
-var inicio = window.pageYOffset;
-window.addEventListener("load", function () {
   if (
     window.matchMedia("(min-width:100px)").matches &&
-    window.matchMedia("(max-width:689px)").matches
+    window.matchMedia("(max-width:700px)").matches
   ) {
+    var animado_1 = document.querySelector(".animacion_1");
+    var animado_2 = document.querySelector(".animacion_2");
+    var animado_3 = document.querySelector(".animacion_3");
+
     window.addEventListener("scroll", function () {
       var ubicacion = parseInt(window.pageYOffset);
       console.log(ubicacion);
       /*TEC HTML5*/
-      if (ubicacion >= 170) {
-        for (var i = 0; i < animado_1.length; i += 1) {
-          animado_1[i].style.opacity = "1";
-        }
-      } else {
-        for (var i = 0; i < animado_1.length; i += 1) {
-          animado_1[i].style.opacity = "0";
-        }
+      if (ubicacion >= 200) {
+        animado_1.style.animation = "opacity 1s forwards";
       }
       /*TEC CSS*/
-      if (ubicacion >= 320) {
-        for (var i = 0; i < animado_2.length; i += 1) {
-          animado_2[i].style.opacity = "1";
-        }
-      } else {
-        for (var i = 0; i < animado_2.length; i += 1) {
-          animado_2[i].style.opacity = "0";
-        }
+      if (ubicacion >= 350) {
+        animado_2.style.animation = "opacity 1s forwards";
       }
       /*TEC JAVASCRIPT*/
       if (ubicacion >= 487) {
-        for (var i = 0; i < animado_3.length; i += 1) {
-          animado_3[i].style.opacity = "1";
-        }
-      } else {
-        for (var i = 0; i < animado_3.length; i += 1) {
-          animado_3[i].style.opacity = "0";
-        }
+        animado_3.style.animation = "opacity 1s forwards";
       }
     });
   }
