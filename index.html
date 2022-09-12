@@ -45,30 +45,36 @@
       </div>
     </header>
     <main>
-      <form>
-        <div id="message">
-          <div class="tittle first_name">Primer Nombre</div>
-          <div id="first_name">
-            <input type="text" />
-          </div>
-          <div class="tittle second_name">Segundo Nombre</div>
-          <div id="second_name">
-            <input type="text" />
-          </div>
-          <div class="tittle mail">Correo Electronico</div>
-          <div id="mail">
-            <input type="text" />
-          </div>
-          <div class="tittle message">Escribe tu mensaje</div>
-          <textarea
-            id="text_message"
-            style="width: 100%; height: 100%"
-          ></textarea>
-          <div id="submit">
-            <input type="button" value="Enviar Mensaje" />
-          </div>
-        </div>
+      <form id="message">
+        <!---->
+        <label class="tittle first_name">Primer Nombre</label>
+        <input id="first_name" type="text" name="first_name" />
+        <!---->
+        <label class="tittle last_name">Apellido</label>
+        <input id="last_name" type="text" name="last_name" />
+        <!---->
+        <label class="tittle mail">Correo Electronico</label>
+        <input id="mail" type="text" name="email" />
+        <!---->
+        <label class="tittle message">Escribe tu mensaje</label>
+        <textarea
+          id="text_message"
+          style="width: 100%; height: 100%"
+          name="message"
+        ></textarea>
+        <!---->
+        <input type="button" id="submit" value="Enviar Mensaje" />
       </form>
+      <!--------------
+      <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+      ></script>
+      <script type="text/javascript">
+        emailjs.init("augsuHwTz9DPb4HSB");
+      </script>
+
+------------------->
       <aside>
         <div id="map">
           <iframe
