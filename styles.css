@@ -154,13 +154,26 @@ main #message {
   display: grid;
   -ms-grid-columns: (20%)[5];
       grid-template-columns: repeat(5, 20%);
-  -ms-grid-rows: 5% 8% 5% 5% 8% 5% 5% 20% 22%;
-      grid-template-rows: 5% 8% 5% 5% 8% 5% 5% 20% 22%;
+  -ms-grid-rows: 5% 6% 8% 5% 6% 8% 5% 20% 8% 20%;
+      grid-template-rows: 5% 6% 8% 5% 6% 8% 5% 20% 8% 20%;
 }
 
 main #message .tittle {
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+main #message p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #000000;
+  background-color: #fe545499;
+  border: 2px red solid;
+  height: 50%;
 }
 
 main #message .first_name {
@@ -184,6 +197,16 @@ main #message #first_name {
   width: 100%;
 }
 
+main #message #error_name {
+  opacity: 0;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+}
+
 main #message .last_name {
   -ms-grid-column: 4;
   -ms-grid-column-span: 1;
@@ -204,7 +227,18 @@ main #message #last_name {
   height: 80%;
 }
 
+main #message #error_last_name {
+  opacity: 0;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 2;
+  grid-column: 4/6;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+}
+
 main #message .mail {
+  margin-top: 2%;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1/3;
@@ -216,11 +250,21 @@ main #message .mail {
 main #message #mail {
   background-color: rgba(218, 218, 218, 0.274);
   -ms-grid-column: 1;
-  -ms-grid-column-span: 7;
-  grid-column: 1/8;
+  -ms-grid-column-span: 5;
+  grid-column: 1/6;
   -ms-grid-row: 5;
   -ms-grid-row-span: 1;
   grid-row: 5/6;
+}
+
+main #message #error_email {
+  opacity: 0;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-column: 1/6;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 1;
+  grid-row: 6/7;
 }
 
 main #message .message {
@@ -243,14 +287,23 @@ main #message #text_message {
   overflow-x: hidden;
 }
 
-main #message #submit {
-  margin-top: 5%;
+main #message #error_message {
+  opacity: 0;
   -ms-grid-column: 1;
   -ms-grid-column-span: 5;
   grid-column: 1/6;
   -ms-grid-row: 9;
   -ms-grid-row-span: 1;
   grid-row: 9/10;
+}
+
+main #message #submit {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-column: 1/6;
+  -ms-grid-row: 10;
+  -ms-grid-row-span: 1;
+  grid-row: 10/11;
   background-color: #f68c40;
 }
 
