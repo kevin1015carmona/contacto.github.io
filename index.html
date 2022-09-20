@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="events.js"></script>
     <script src="form.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      emailjs.init("augsuHwTz9DPb4HSB");
+    </script>
 
     <title>Contacto</title>
   </head>
@@ -47,16 +54,16 @@
       </div>
     </header>
     <main>
-      <form id="message">
+      <form id="message" onsubmit="return false">
         <div class="alert enviado">
           <img src="Imagenes/enviado.png" alt="img_enviado" />
           <h4>Tu mensaje ha sido enviado correctamente</h4>
-          <button>Aceptar</button>
+          <input type="button" id="aceptar" value="Aceptar"></input>
         </div>
         <div class="alert no_enviado">
           <img src="Imagenes/no_enviado.png" alt="img_no_enviado" />
           <h4>Tu mensaje no ha sido enviado por favor revisa tu informacion</h4>
-          <button>Revisar</button>
+          <input type="button" id="revisar" value="Revisarr"></input>
         </div>
         <!---->
         <label class="tittle first_name">Primer Nombre</label>

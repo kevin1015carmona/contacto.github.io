@@ -129,7 +129,7 @@ main {
         @include fontsubtitles(15px);
         text-align: center;
       }
-      button {
+      input {
         margin: 5% 0% 0% 8%;
         height: 15%;
         width: 80%;
@@ -137,13 +137,13 @@ main {
     }
     .enviado {
       display: none;
-      button {
+      input {
         background-color: rgb(3, 161, 3);
       }
     }
     .no_enviado {
       display: none;
-      button {
+      input {
         background-color: #d0342cdc;
       }
     }
@@ -153,9 +153,8 @@ main {
     p {
       display: flex;
       justify-content: center;
-      color: #000000;
-      background-color: #fe545499;
-      border: 2px red solid;
+      color: red;
+
       height: 50%;
     }
     .first_name {

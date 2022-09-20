@@ -185,7 +185,7 @@ main #message .alert h4 {
   text-align: center;
 }
 
-main #message .alert button {
+main #message .alert input {
   margin: 5% 0% 0% 8%;
   height: 15%;
   width: 80%;
@@ -195,7 +195,7 @@ main #message .enviado {
   display: none;
 }
 
-main #message .enviado button {
+main #message .enviado input {
   background-color: #03a103;
 }
 
@@ -203,7 +203,7 @@ main #message .no_enviado {
   display: none;
 }
 
-main #message .no_enviado button {
+main #message .no_enviado input {
   background-color: #d0342cdc;
 }
 
@@ -219,9 +219,7 @@ main #message p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #000000;
-  background-color: #fe545499;
-  border: 2px red solid;
+  color: red;
   height: 50%;
 }
 
