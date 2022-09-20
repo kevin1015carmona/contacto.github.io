@@ -48,6 +48,16 @@
     </header>
     <main>
       <form id="message">
+        <div class="alert enviado">
+          <img src="Imagenes/enviado.png" alt="img_enviado" />
+          <h4>Tu mensaje ha sido enviado correctamente</h4>
+          <button>Aceptar</button>
+        </div>
+        <div class="alert no_enviado">
+          <img src="Imagenes/no_enviado.png" alt="img_no_enviado" />
+          <h4>Tu mensaje no ha sido enviado por favor revisa tu informacion</h4>
+          <button>Revisar</button>
+        </div>
         <!---->
         <label class="tittle first_name">Primer Nombre</label>
         <input id="first_name" type="text" name="first_name" />
@@ -69,7 +79,7 @@
         ></textarea>
         <p id="error_message">Introduce un mensaje</p>
         <!---->
-        <input type="button" id="submit" value="Enviar Mensaje" />
+        <button type="submit" id="submit">Enviar Mensaje</button>
       </form>
       <aside>
         <div id="map">
@@ -148,11 +158,6 @@
           <a href=""
             ><img src="/Imagenes/GitHub.png" class="footers_log" alt="" />
           </a>
-        </div>
-      </div>
-      <div id="privacy">
-        <div>
-          <h3><a href="">Consulta nuestro aviso de privacidad</a></h3>
         </div>
       </div>
     </footer>

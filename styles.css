@@ -85,7 +85,7 @@ header {
   color: white;
 }
 
-button {
+#menu_button {
   display: none;
 }
 
@@ -145,7 +145,7 @@ main {
 }
 
 main #message {
-  padding: 0% 5% 5% 5%;
+  padding: 0% 5% 0% 5%;
   height: 100%;
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
@@ -154,8 +154,57 @@ main #message {
   display: grid;
   -ms-grid-columns: (20%)[5];
       grid-template-columns: repeat(5, 20%);
-  -ms-grid-rows: 5% 6% 8% 5% 6% 8% 5% 20% 8% 20%;
-      grid-template-rows: 5% 6% 8% 5% 6% 8% 5% 20% 8% 20%;
+  -ms-grid-rows: 5% 6% 8% 5% 6% 8% 5% 20% 8% 20% 8%;
+      grid-template-rows: 5% 6% 8% 5% 6% 8% 5% 20% 8% 20% 8%;
+}
+
+main #message .alert {
+  z-index: 2;
+  background-color: #dededeec;
+  border: 2px grey solid;
+  -webkit-box-shadow: 0px 7px 5px 3px #000000;
+          box-shadow: 0px 7px 5px 3px #000000;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-column: 3/6;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 6;
+  grid-row: 4/10;
+}
+
+main #message .alert img {
+  margin-left: 35%;
+  width: 30%;
+  height: 50%;
+}
+
+main #message .alert h4 {
+  font-size: 15px;
+  font-family: monospace;
+  font-weight: normal;
+  text-align: center;
+}
+
+main #message .alert button {
+  margin: 5% 0% 0% 8%;
+  height: 15%;
+  width: 80%;
+}
+
+main #message .enviado {
+  display: none;
+}
+
+main #message .enviado button {
+  background-color: #03a103;
+}
+
+main #message .no_enviado {
+  display: none;
+}
+
+main #message .no_enviado button {
+  background-color: #d0342cdc;
 }
 
 main #message .tittle {
