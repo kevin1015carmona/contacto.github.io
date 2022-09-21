@@ -154,8 +154,8 @@ main #message {
   display: grid;
   -ms-grid-columns: (20%)[5];
       grid-template-columns: repeat(5, 20%);
-  -ms-grid-rows: 5% 6% 8% 5% 6% 8% 5% 20% 8% 20% 8%;
-      grid-template-rows: 5% 6% 8% 5% 6% 8% 5% 20% 8% 20% 8%;
+  -ms-grid-rows: 5% 6% 5% 5% 6% 5% 5% 20% 8% 20%;
+      grid-template-rows: 5% 6% 5% 5% 6% 5% 5% 20% 8% 20%;
 }
 
 main #message .alert {
@@ -225,8 +225,8 @@ main #message p {
 
 main #message .first_name {
   -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
@@ -362,6 +362,33 @@ main input {
   background-color: rgba(218, 218, 218, 0.274);
   height: 80%;
   width: 100%;
+}
+
+main #submit_successful {
+  background-color: #f8f8f8ec;
+  margin: 10% 10% 10% 13%;
+  z-index: -1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -webkit-box-shadow: 0px 29px 34px -3px rgba(37, 37, 37, 0.4);
+          box-shadow: 0px 29px 34px -3px rgba(37, 37, 37, 0.4);
+  display: none;
+}
+
+main #submit_successful img {
+  height: 30%;
+  width: 30%;
+  margin: 5% 30% 5% 30%;
+}
+
+main #submit_successful h4 {
+  font-size: 14px;
+  font-family: monospace;
+  font-weight: normal;
 }
 
 /*MAIN END*/
@@ -522,12 +549,6 @@ aside #address {
 footer {
   border-top: 4px solid rgba(62, 0, 119, 0.808);
   background-color: #607f9b;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  -ms-grid-rows: 100%;
-      grid-template-rows: 100%;
   width: 100vw;
 }
 
@@ -541,9 +562,9 @@ footer #author {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 footer #author #author_title {
@@ -643,8 +664,11 @@ footer #privacy a {
     -ms-grid-rows: 20% 80%;
         grid-template-rows: 20% 80%;
   }
+  #first_header .header_perfil {
+    margin-left: -0%;
+  }
   .header {
-    visibility: hidden;
+    display: none;
   }
   @-webkit-keyframes nav_menu1 {
     from {
@@ -780,9 +804,9 @@ footer #privacy a {
               transform: rotate(0deg);
     }
   }
-  button {
+  #menu_button {
     display: block;
-    margin-right: 3%;
+    margin-left: 25%;
     height: 70%;
     width: 7%;
     background-color: #6b6ccf;
@@ -807,11 +831,14 @@ footer #privacy a {
   }
   /*--------------SECOND HEADER--------------*/
   body {
-    -ms-grid-rows: 24% 25% 41% 10%;
-        grid-template-rows: 24% 25% 41% 10%;
+    -ms-grid-rows: 19% 35% 41% 5%;
+        grid-template-rows: 19% 35% 41% 5%;
   }
   #second_header {
     width: 100vw;
+  }
+  #second_header #A {
+    margin: 5%;
   }
   @-webkit-keyframes menu_expand {
     from {
@@ -904,72 +931,8 @@ footer #privacy a {
         grid-template-columns: 100%;
   }
   main #message {
-    -ms-grid-rows: (1fr)[7];
-        grid-template-rows: repeat(7, 1fr);
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1/2;
-    padding-right: 5%;
-    /*FORM*/
-  }
-  main #message #first_name {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 3;
-    grid-column: 2/5;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
-  }
-  main #message #first_name input {
-    background-color: rgba(218, 218, 218, 0.274);
-  }
-  main #message #last_name {
-    -ms-grid-column: 7;
-    -ms-grid-column-span: 3;
-    grid-column: 7/10;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
-  }
-  main #message #last_name input {
-    background-color: rgba(218, 218, 218, 0.274);
-  }
-  main #message #mail {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 8;
-    grid-column: 2/10;
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 2;
-    grid-row: 2/4;
-    margin-top: 5%;
-    margin-bottom: 8%;
-  }
-  main #message #mail input {
-    background-color: rgba(218, 218, 218, 0.274);
-    height: 80%;
-    width: 110%;
-  }
-  main #message #text_message {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 8;
-    grid-column: 2/10;
-    -ms-grid-row: 4;
-    -ms-grid-row-span: 2;
-    grid-row: 4/6;
-  }
-  main #message #text_message input {
-    background-color: rgba(218, 218, 218, 0.274);
-    height: 80%;
-    width: 110%;
-  }
-  main #message #submit {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 8;
-    grid-column: 2/10;
-    -ms-grid-row: 6;
-    -ms-grid-row-span: 2;
-    grid-row: 6/8;
-    margin-top: 5%;
+    -ms-grid-rows: 5% 6% 7% 5% 6% 7% 5% 20% 10% 15%;
+        grid-template-rows: 5% 6% 7% 5% 6% 7% 5% 20% 10% 15%;
   }
   /*----------------TARJETAS-------------------*/
   #second_main {
@@ -1081,8 +1044,8 @@ footer #privacy a {
   }
   /*--------------SECOND HEADER--------------*/
   body {
-    -ms-grid-rows: 24% 25% 41% 10%;
-        grid-template-rows: 24% 25% 41% 10%;
+    -ms-grid-rows: 20% 30% 45% 5%;
+        grid-template-rows: 20% 30% 45% 5%;
   }
   #second_header {
     -ms-grid-rows: 40% 50%;
@@ -1107,7 +1070,7 @@ footer #privacy a {
     width: 100vw;
   }
   aside {
-    visibility: hidden;
+    display: none;
   }
   /*------------MAIN------------*/
   main {
@@ -1115,72 +1078,11 @@ footer #privacy a {
         grid-template-columns: 100%;
   }
   main #message {
-    -ms-grid-rows: (1fr)[7];
-        grid-template-rows: repeat(7, 1fr);
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/2;
     padding-right: 10%;
     /*FORM*/
-  }
-  main #message #first_name {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 3;
-    grid-column: 2/5;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
-  }
-  main #message #first_name input {
-    background-color: rgba(218, 218, 218, 0.274);
-  }
-  main #message #last_name {
-    -ms-grid-column: 7;
-    -ms-grid-column-span: 3;
-    grid-column: 7/10;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
-  }
-  main #message #last_name input {
-    background-color: rgba(218, 218, 218, 0.274);
-  }
-  main #message #mail {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 8;
-    grid-column: 2/10;
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 2;
-    grid-row: 2/4;
-    margin-top: 5%;
-    margin-bottom: 8%;
-  }
-  main #message #mail input {
-    background-color: rgba(218, 218, 218, 0.274);
-    height: 80%;
-    width: 110%;
-  }
-  main #message #text_message {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 8;
-    grid-column: 2/10;
-    -ms-grid-row: 4;
-    -ms-grid-row-span: 2;
-    grid-row: 4/6;
-  }
-  main #message #text_message input {
-    background-color: rgba(218, 218, 218, 0.274);
-    height: 80%;
-    width: 110%;
-  }
-  main #message #submit {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 8;
-    grid-column: 2/10;
-    -ms-grid-row: 6;
-    -ms-grid-row-span: 2;
-    grid-row: 6/8;
-    margin-top: 5%;
   }
   /*----------------TARJETAS-------------------*/
   #second_main {

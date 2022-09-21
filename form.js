@@ -1,5 +1,6 @@
 "use strict";
 window.addEventListener("load", function () {
+  //console.warn("Hola, bienvenido a la consola de mi pagina :D");
   //labels
   const first_name = document.querySelector("#first_name");
   const last_name = document.querySelector("#last_name");
@@ -41,6 +42,10 @@ window.addEventListener("load", function () {
     }
   });
   email.addEventListener("blur", function () {
+    /*console.error("NO DEBERIAS DE ESTAR REVISANDO ESTA PARTE DE LA CONSOLA");
+    //console.warn(
+      //"ATENCION, LA VALIDACION DE DATOS DEL LADO DEL CLIENTE NO ES RECOMENDADA,PARA FINES PRACTICOS SE REALIZARÁ DEL LADO DEL CLIENTE LO OPTIMO ES REALIZARLA DEL LADO DEL SERVIDOR "
+    );*/
     let check = email.value;
     if (isNaN(check) || check.value >= 0) {
       error_email.style.opacity = 0;
@@ -80,9 +85,15 @@ window.addEventListener("load", function () {
         emailjs.sendForm(serviceID, templateID, this).then(
           function () {
             btn.value = "Send Email";
-            alert("el form está completo");
             enviado.style.display = "block";
             let aceptar = document.querySelector("#aceptar");
+            let div_message = document.querySelector("#message");
+            let submit_successful =
+              document.querySelector("#submit_successful");
+            aceptar.addEventListener("click", function () {
+              div_message.style.display = "none";
+              submit_successful.style.display = "block";
+            });
           },
           function (err) {
             btn.value = "Send Email";
@@ -90,8 +101,11 @@ window.addEventListener("load", function () {
           }
         );
       } else {
-        alert("el form no está completo");
         no_enviado.style.display = "block";
+        let revisar = document.querySelector("#revisar");
+        revisar.addEventListener("click", function () {
+          no_enviado.style.display = "none";
+        });
       }
     });
 });

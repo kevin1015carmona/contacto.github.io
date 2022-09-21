@@ -55,16 +55,6 @@
     </header>
     <main>
       <form id="message" onsubmit="return false">
-        <div class="alert enviado">
-          <img src="Imagenes/enviado.png" alt="img_enviado" />
-          <h4>Tu mensaje ha sido enviado correctamente</h4>
-          <input type="button" id="aceptar" value="Aceptar"></input>
-        </div>
-        <div class="alert no_enviado">
-          <img src="Imagenes/no_enviado.png" alt="img_no_enviado" />
-          <h4>Tu mensaje no ha sido enviado por favor revisa tu informacion</h4>
-          <input type="button" id="revisar" value="Revisarr"></input>
-        </div>
         <!---->
         <label class="tittle first_name">Primer Nombre</label>
         <input id="first_name" type="text" name="first_name" />
@@ -87,7 +77,25 @@
         <p id="error_message">Introduce un mensaje</p>
         <!---->
         <button type="submit" id="submit">Enviar Mensaje</button>
+        <!--Afrter click submit do:-->
+        <div class="alert enviado">
+          <img src="Imagenes/enviado.png" alt="img_enviado" />
+          <h4>Tu mensaje ha sido enviado correctamente</h4>
+          <input type="button" id="aceptar" value="Aceptar"></input>
+        </div>
+        <div class="alert no_enviado">
+          <img src="Imagenes/no_enviado.png" alt="img_no_enviado" />
+          <h4>Tu mensaje no ha sido enviado por favor revisa tu informacion</h4>
+          <input type="button" id="revisar" value="Revisar"></input>
+        </div>
+        <!---->
       </form>
+
+      <section id="submit_successful">
+        <img src="Imagenes/correo_enviado.png" alt="correo_enviado_png">
+        <h4>¡Ya has enviado un correo,por favor espera  muchas gracias!</h4>
+      </section>
+
       <aside>
         <div id="map">
           <iframe
