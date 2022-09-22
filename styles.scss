@@ -31,11 +31,69 @@ a {
   }
 }
 
+@keyframes nav_menu1 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-45deg) translate(-8px, 7px);
+  }
+}
+@keyframes nav_menu1_return {
+  from {
+    transform: rotate(-45deg) translate(-8px, 7px);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes nav_menu2 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes nav_menu2_return {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes nav_menu3 {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-45deg) translate(9px, -11px);
+  }
+}
+@keyframes nav_menu3_return {
+  from {
+    opacity: 0;
+    transform: rotate(-45deg) translate(9px, -11px);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
 body {
   height: 1300px;
   width: 100vw;
   display: grid;
-  grid-template-rows: 20% 35% 32.5% 12.5%;
+  grid-template-rows: 20% 38% 36% 6%;
   grid-template-columns: 100%;
   overflow-x: hidden;
 }
@@ -368,7 +426,7 @@ footer {
   background-color: #607f9b;
   width: 100vw;
   #author {
-    grid-column: 1/2;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -410,24 +468,39 @@ footer {
 
 /*----------RESPONSIVE--------------------*/
 
-@media (min-width: 1011px) {
-  .header {
-    visibility: visible;
-  }
-}
-
 @media (min-width: 783px) and (max-width: 1010px) {
   /*Ajustando tamaño de mapa de ubiciacion para que no salga 
     del param screen*/
   main {
     grid-template-columns: 60% 40%;
   }
-  .header {
-    visibility: visible;
-  }
 }
 
 @media (min-width: 690px) and (max-width: 782px) {
+  @keyframes menu_expand {
+    from {
+      height: 0%;
+      visibility: hidden;
+    }
+    to {
+      height: 40%;
+      visibility: visible;
+    }
+  }
+
+  @keyframes menu_contract {
+    0% {
+      height: 40%;
+      visibility: visible;
+    }
+    80% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: hidden;
+      height: 0%;
+    }
+  }
   main {
     grid-template-columns: 56% 44%;
   }
@@ -435,15 +508,12 @@ footer {
   aside > #address {
     padding-left: 3%;
   }
-
-  .header {
-    visibility: visible;
-  }
-
-  .tec_tittle,
-  .tec_description {
-    margin: 3% 7% 7% 7%;
+  #second_main .tec_tittle,
+  #second_main .tec_description {
+    margin: 3%;
     font-size: 12px;
+    visibility: hidden;
+    text-align: center;
   }
 }
 
@@ -459,64 +529,6 @@ footer {
 
   .header {
     display: none;
-  }
-
-  @keyframes nav_menu1 {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(-45deg) translate(-8px, 7px);
-    }
-  }
-  @keyframes nav_menu1_return {
-    from {
-      transform: rotate(-45deg) translate(-8px, 7px);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
-  @keyframes nav_menu2 {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(45deg);
-    }
-  }
-
-  @keyframes nav_menu2_return {
-    from {
-      transform: rotate(45deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
-
-  @keyframes nav_menu3 {
-    0% {
-      opacity: 1;
-      transform: rotate(0deg);
-    }
-    95% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 0;
-      transform: rotate(-45deg) translate(9px, -11px);
-    }
-  }
-  @keyframes nav_menu3_return {
-    from {
-      opacity: 0;
-      transform: rotate(-45deg) translate(9px, -11px);
-    }
-    to {
-      opacity: 1;
-      transform: rotate(0deg);
-    }
   }
 
   #menu_button {
@@ -676,16 +688,86 @@ footer {
       }
     }
   }
+  /*FOOTER*/
+  footer #author .footers_log {
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+  }
 }
 /*------------------MOVILES----------------*/
 
 @media (min-width: 100px) and (max-width: 480px) {
-  .header {
+  @keyframes menu_expand {
+    from {
+      height: 0%;
+      visibility: hidden;
+    }
+    to {
+      height: 40%;
+      visibility: visible;
+    }
+  }
+
+  @keyframes menu_contract {
+    0% {
+      height: 40%;
+      visibility: visible;
+    }
+    80% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: hidden;
+      height: 0%;
+    }
+  }
+  header {
+    grid-template-rows: 25% 75%;
+  }
+  #menu {
     visibility: hidden;
+    height: 0%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #menu > span {
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+    height: 31%;
+    border-bottom: gray 3px solid;
+    background-color: #4a3f3ff0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .header {
+    display: none;
   }
   /*--------------SECOND HEADER--------------*/
   body {
-    grid-template-rows: 20% 30% 45% 5%;
+    grid-template-rows: 15% 35% 43% 7%;
+  }
+
+  #menu_button {
+    display: block;
+    height: 70%;
+    width: 7%;
+    background-color: #6b6ccf;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .bar {
+    height: 15%;
+    width: 70%;
+    background-color: black;
   }
 
   #second_header {
@@ -712,6 +794,7 @@ footer {
 
   main {
     grid-template-columns: 100%;
+    margin-top: 10%;
     #message {
       grid-column: 1/2;
       padding-right: 10%;
@@ -726,7 +809,6 @@ footer {
       grid-column: 1/2;
       grid-row: 1/2;
       text-align: center;
-      padding-top: 5%;
     }
     /*QUITANDO ANIMACION HOVER*/
     #div_html:hover > .tec_tittle,
@@ -784,20 +866,21 @@ footer {
   /*-----------FOOTER----------*/
   footer {
     #author {
-      div {
-        grid-row: 1/2;
-        font-size: 19px;
-        grid-column: 1/4;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      #author_title {
+        font-size: 16px;
+        width: 100%;
+        margin-right: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
       }
-
-      .linkedin {
-        margin-left: 25%;
-        margin-right: 25%;
-        width: 30%;
-        .footers_log {
-          height: 100%;
-          width: 100%;
-        }
+      .footers_log {
+        height: 35px;
+        width: 35px;
+        border-radius: 10px;
       }
     }
   }
