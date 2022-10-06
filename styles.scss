@@ -799,7 +799,7 @@ footer {
       opacity: 1;
       transform: rotate(0deg);
     }
-    95% {
+    70% {
       opacity: 0;
     }
     100% {
@@ -808,11 +808,14 @@ footer {
     }
   }
   @keyframes nav_menu3_return {
-    from {
+    0% {
       opacity: 0;
       transform: rotate(-45deg) translate(9px, -11px);
     }
-    to {
+    70% {
+      opacity: 0;
+    }
+    100% {
       opacity: 1;
       transform: rotate(0deg);
     }
