@@ -66,14 +66,11 @@ a {
 }
 
 @keyframes nav_menu3 {
-  0% {
+  from {
     opacity: 1;
     transform: rotate(0deg);
   }
-  95% {
-    opacity: 0;
-  }
-  100% {
+  to {
     opacity: 0;
     transform: rotate(-45deg) translate(9px, -11px);
   }
@@ -553,14 +550,11 @@ footer {
   }
 
   @keyframes nav_menu3 {
-    0% {
+    from {
       opacity: 1;
       transform: rotate(0deg);
     }
-    95% {
-      opacity: 0;
-    }
-    100% {
+    to {
       opacity: 0;
       transform: rotate(-45deg) translate(9px, -11px);
     }
