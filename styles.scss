@@ -770,7 +770,7 @@ footer {
   }
   @keyframes nav_menu1_return {
     from {
-      transform: rotate(-45deg) translate(5.5px, 7px);
+      transform: rotate(-45deg) translate(-5px, 6px);
     }
     to {
       transform: rotate(0deg);
@@ -804,15 +804,15 @@ footer {
     }
     100% {
       opacity: 0;
-      transform: rotate(-45deg) translate(9px, -11px);
+      transform: rotate(-45deg);
     }
   }
   @keyframes nav_menu3_return {
-    from {
+    0% {
       opacity: 0;
-      transform: rotate(-45deg) translate(9px, -11px);
+      transform: rotate(-45deg);
     }
-    to {
+    100% {
       opacity: 1;
       transform: rotate(0deg);
     }
