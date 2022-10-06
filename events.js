@@ -13,7 +13,6 @@ window.addEventListener("load", function () {
       menu1.style.animation = "nav_menu1 .7s forwards";
       menu2.style.animation = "nav_menu2 .7s forwards";
       menu3.style.animation = "nav_menu3 .7s forwards";
-
       comprobar_menu = true;
     } else {
       menu.style.animation = "menu_contract .7s forwards";
