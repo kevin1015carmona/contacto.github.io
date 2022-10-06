@@ -1,6 +1,6 @@
 "use strict";
 window.addEventListener("load", function () {
-  //console.warn("Hola, bienvenido a la consola de mi pagina :D");
+  console.warn("Hola, bienvenido a la consola de mi pagina :D");
   //labels
   const first_name = document.querySelector("#first_name");
   const last_name = document.querySelector("#last_name");
@@ -42,10 +42,8 @@ window.addEventListener("load", function () {
     }
   });
   email.addEventListener("blur", function () {
-    /*console.error("NO DEBERIAS DE ESTAR REVISANDO ESTA PARTE DE LA CONSOLA");
-    //console.warn(
-      //"ATENCION, LA VALIDACION DE DATOS DEL LADO DEL CLIENTE NO ES RECOMENDADA,PARA FINES PRACTICOS SE REALIZARÁ DEL LADO DEL CLIENTE LO OPTIMO ES REALIZARLA DEL LADO DEL SERVIDOR "
-    );*/
+    console.error("NO DEBERIAS DE ESTAR REVISANDO ESTA PARTE DE LA CONSOLA");
+
     let check = email.value;
     if (isNaN(check) || check.value >= 0) {
       error_email.style.opacity = 0;

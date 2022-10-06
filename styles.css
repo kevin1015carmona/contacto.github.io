@@ -1515,6 +1515,12 @@ footer #privacy a {
     grid-column: 1/2;
     padding-right: 10%;
   }
+  main #message #error_name {
+    font-size: 14px;
+  }
+  main #message #error_last_name {
+    font-size: 15px;
+  }
   main #message .alert {
     -ms-grid-column: 2;
     -ms-grid-column-span: 3;

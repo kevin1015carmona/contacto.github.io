@@ -920,6 +920,13 @@ footer {
     #message {
       grid-column: 1/2;
       padding-right: 10%;
+      #error_name {
+        font-size: 14px;
+      }
+
+      #error_last_name {
+        font-size: 15px;
+      }
       .alert {
         grid-column: 2/5;
         grid-row: 5/11;
