@@ -7,6 +7,23 @@ window.addEventListener("load", function () {
   const menu3 = document.querySelector(".menu3");
   var comprobar_menu = false;
 
+  var animado_1 = document.querySelector(".animacion_1");
+  var animado_2 = document.querySelector(".animacion_2");
+  var animado_3 = document.querySelector(".animacion_3");
+
+  let scroll = function scroll(ubicacion_html, ubicacion_css, ubicacion_js) {
+    let altura = parseInt(window.pageYOffset);
+    if (altura >= ubicacion_html) {
+      animado_1.style.animation = "opacity 1s forwards";
+    }
+    if (altura >= ubicacion_css) {
+      animado_2.style.animation = "opacity 1s forwards";
+    }
+    if (altura >= ubicacion_js) {
+      animado_3.style.animation = "opacity 1s forwards";
+    }
+  };
+
   if (
     window.matchMedia("(min-width:100px)").matches &&
     window.matchMedia("(max-width:479px)").matches
@@ -26,49 +43,8 @@ window.addEventListener("load", function () {
         comprobar_menu = false;
       }
     });
-
-    if (
-      window.matchMedia("(min-width:100px)").matches &&
-      window.matchMedia("(max-width:475px)").matches
-    ) {
-      var animado_1 = document.querySelector(".animacion_1");
-      var animado_2 = document.querySelector(".animacion_2");
-      var animado_3 = document.querySelector(".animacion_3");
-
-      window.addEventListener("scroll", function () {
-        var ubicacion = parseInt(window.pageYOffset);
-        console.log(ubicacion);
-        /*TEC HTML5*/
-        if (ubicacion >= 150) {
-          animado_1.style.animation = "opacity 1s forwards";
-        }
-        /*TEC CSS*/
-        if (ubicacion >= 250) {
-          animado_2.style.animation = "opacity 1s forwards";
-        }
-        /*TEC JAVASCRIPT*/
-        if (ubicacion >= 350) {
-          animado_3.style.animation = "opacity 1s forwards";
-        }
-      });
-    }
+    window.addEventListener("scroll", function () {
+      scroll(150, 250, 350);
+    });
   }
 });
-
-//SACAR INFORMACION DEL SEGUNDO HEADER Y PONERLO EN UNA
-//VARIABLE PARA DESPUES HACER UN INNER Y VOLVERLO A
-//COLOCAR EN EL HTML
-
-/*SIRVE PARA ANIMAR OBJETOS, VA RECORRIENDO EL INDEX
-Y A CADA UNO LO VA ANIMANDO, NO SE OCUPARA EN ESTE 
-CODIGO PORQUE A CADA TEC SE LE DARÁ UNA ANIMACION A
-DISTINTA ALTURA DE SCROLL*/
-/*if (ubicacion >= 200) {
-  for (var i = 0; i < animado.length; i += 1) {
-    animado[i].style.opacity = "1";
-  }
-} else {
-  for (var i = 0; i < animado.length; i += 1) {
-    animado[i].style.opacity = "0";
-  }
-}*/

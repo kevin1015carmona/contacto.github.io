@@ -310,6 +310,7 @@ main #message .alert {
   -ms-grid-row: 4;
   -ms-grid-row-span: 6;
   grid-row: 4/10;
+  padding: 3%;
 }
 
 main #message .alert img {
