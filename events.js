@@ -36,15 +36,15 @@ window.addEventListener("load", function () {
       var ubicacion = parseInt(window.pageYOffset);
       console.log(ubicacion);
       /*TEC HTML5*/
-      if (ubicacion >= 200) {
+      if (ubicacion >= 150) {
         animado_1.style.animation = "opacity 1s forwards";
       }
       /*TEC CSS*/
-      if (ubicacion >= 350) {
+      if (ubicacion >= 250) {
         animado_2.style.animation = "opacity 1s forwards";
       }
       /*TEC JAVASCRIPT*/
-      if (ubicacion >= 487) {
+      if (ubicacion >= 350) {
         animado_3.style.animation = "opacity 1s forwards";
       }
     });
