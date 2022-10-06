@@ -44,7 +44,7 @@ window.addEventListener("load", function () {
         animado_2.style.animation = "opacity 1s forwards";
       }
       /*TEC JAVASCRIPT*/
-      if (ubicacion >= 400) {
+      if (ubicacion >= 380) {
         animado_3.style.animation = "opacity 1s forwards";
       }
     });
