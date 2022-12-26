@@ -360,7 +360,6 @@ aside {
   .tec_description {
     margin: 3% 7% 7% 7%;
     font-size: 13px;
-    visibility: hidden;
     text-align: center;
   }
   #div_html:hover,
@@ -510,7 +509,6 @@ footer {
   #second_main .tec_description {
     margin: 3%;
     font-size: 12px;
-    visibility: hidden;
     text-align: center;
   }
 }
@@ -952,12 +950,17 @@ footer {
       animation: none;
     }
 
+    #second_main_title {
+      font-size: 15px;
+    }
+
     .tec_description {
       visibility: visible;
       text-align: right;
       margin: 3%;
       opacity: 0;
       transition: all 500ms;
+      font-size: 11.5px;
     }
 
     #div_html {
