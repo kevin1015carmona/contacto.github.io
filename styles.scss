@@ -845,6 +845,10 @@ footer {
     }
   }
 
+  .header_perfil > h1 {
+    font-size: 15px;
+  }
+
   #menu {
     visibility: hidden;
     height: 0%;
@@ -876,7 +880,7 @@ footer {
   #menu_button {
     display: block;
     height: 70%;
-    width: 7%;
+    width: 9%;
     background-color: #6b6ccf;
     display: flex;
     flex-direction: column;
