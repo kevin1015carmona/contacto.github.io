@@ -103,7 +103,7 @@ header {
 
 #first_header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: #607f9b;
   border-bottom: 4px solid rgba(62, 0, 119, 0.808);
@@ -246,7 +246,6 @@ main {
       grid-row: 3/4;
     }
     .mail {
-      margin-top: 1%;
       grid-column: 1/6;
       grid-row: 4/5;
     }
@@ -316,8 +315,11 @@ aside {
   grid-template-rows: repeat(10, 10%);
   #map {
     grid-row: 2/9;
-    padding-left: 15%;
+    padding-left: 10%;
     padding-top: 3%;
+  }
+  iframe {
+    width: 98%;
   }
   #address {
     grid-row: 9/11;
@@ -519,12 +521,12 @@ footer {
       transform: rotate(0deg);
     }
     to {
-      transform: rotate(-45deg) translate(-5.5px, 7px);
+      transform: rotate(-45deg) translate(-8px, 8px);
     }
   }
   @keyframes nav_menu1_return {
     from {
-      transform: rotate(-45deg) translate(-5.5px, 7px);
+      transform: rotate(-45deg) translate(-8px, 8px);
     }
     to {
       transform: rotate(0deg);
@@ -570,12 +572,7 @@ footer {
   }
 
   header {
-    grid-template-rows: 20% 80%;
-  }
-  #first_header {
-    .header_perfil {
-      margin-left: -0%;
-    }
+    grid-template-rows: 24% 76%;
   }
 
   .header {
@@ -584,9 +581,9 @@ footer {
 
   #menu_button {
     display: block;
-    margin-left: 25%;
-    height: 70%;
-    width: 10%;
+    height: 80%;
+    width: 9vw;
+    margin-right: 7vw;
     background-color: #6b6ccf;
     display: flex;
     flex-direction: column;
@@ -594,7 +591,7 @@ footer {
     align-items: center;
   }
   .bar {
-    height: 15%;
+    height: 13%;
     width: 70%;
     background-color: black;
   }
@@ -877,10 +874,28 @@ footer {
     grid-template-rows: 15% 35% 43% 7%;
   }
 
+  @keyframes nav_menu1 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-45deg) translate(-7px, 7px);
+    }
+  }
+  @keyframes nav_menu1_return {
+    from {
+      transform: rotate(-45deg) translate(-7px, 7px);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
   #menu_button {
     display: block;
-    height: 70%;
-    width: 9%;
+    height: 85%;
+    width: 11vw;
+    margin-right: 9vw;
     background-color: #6b6ccf;
     display: flex;
     flex-direction: column;
@@ -1022,5 +1037,11 @@ footer {
         border-radius: 10px;
       }
     }
+  }
+}
+
+@media (min-width: 0px) and (max-width: 340px) {
+  #menu_button {
+    width: 14vw;
   }
 }

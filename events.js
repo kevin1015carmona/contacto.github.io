@@ -26,7 +26,7 @@ window.addEventListener("load", function () {
 
   if (
     window.matchMedia("(min-width:100px)").matches &&
-    window.matchMedia("(max-width:479px)").matches
+    window.matchMedia("(max-width:699px)").matches
   ) {
     boton.addEventListener("click", function () {
       if (comprobar_menu == false) {
